@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name": "410_gone",
+    "builds": [
+        { "src": "*.html", "use": "@vercel/static" },
+        { "src": "*.css", "use": "@vercel/static" }
+    ],
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html",
+            "statusCode": 410
+        }
+    ]
+}
