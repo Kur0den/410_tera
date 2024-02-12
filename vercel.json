@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "410_gone",
+    "name": "410",
     "builds": [
         { "src": "*.html", "use": "@vercel/static" },
         { "src": "*.css", "use": "@vercel/static" }
