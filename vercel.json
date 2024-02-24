@@ -1,7 +1,10 @@
 {
     "version": 2,
     "name": "410",
-    "builds": [{ "src": "*.html", "use": "@vercel/static" }],
+    "builds": [
+        { "src": "*.html", "use": "@vercel/static" },
+        { "src": "./sound.mp3", "use": "@vercel/static" }
+    ],
     "redirects": [
         {
             "source": "/(.*)",
