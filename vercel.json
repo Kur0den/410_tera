@@ -3,17 +3,12 @@
     "name": "410",
     "builds": [
         { "src": "*.html", "use": "@vercel/static" },
-        { "src": "./sound.mp3", "use": "@vercel/static" },
-        { "src": "./favicon.ico", "use": "@vercel/static" }
+        { "src": "./sound.mp3", "use": "@vercel/static" }
     ],
     "rewrites": [
         {
             "source": "/sound.mp3",
             "destination": "/sound.mp3"
-        },
-        {
-            "source": "/favicon.ico",
-            "destination": "/favicon.ico"
         }
     ],
     "redirects": [
