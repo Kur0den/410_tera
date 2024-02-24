@@ -7,6 +7,10 @@
     ],
     "redirects": [
         {
+            "source": "/sound.mp3",
+            "destination": "/sound.mp3"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html",
             "statusCode": 410
