@@ -23,12 +23,15 @@
                 >Otologic</a
             >
         </p>
+        <p id="playCount">再生回数: 0</p>
         <script>
             var audio = document.getElementById("gone");
+            var playCountElement = document.getElementById("playCount")
             var count = 0;
             audio.onended = function (){
                 count++;
-                if(count < 10){
+                playCountElement.textContent = '再生回数: ' + count;
+                if(count < 108){
                     audio.play();
                 }
             };
