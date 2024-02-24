@@ -8,12 +8,15 @@
             * {
                 text-align: center;
             }
+            #button {
+                border-radius: 20px;
+            }
         </style>
     </head>
     <body>
         <h2>410 Gone</h2>
         <hr />
-        <p>ご～ん...</p>
+        <p id="go~ne">ご～ん...</p>
         <audio controls autoplay id="gone">
             <source src="sound.mp3" type="audio/mpeg" />
         </audio>
@@ -23,18 +26,26 @@
                 >Otologic</a
             >
         </p>
-        <p id="playCount">払った煩悩の数: 0</p>
+        <p id="playCount"></p>
         <script>
-            var audio = document.getElementById("gone");
-            var playCountElement = document.getElementById("playCount")
+            var audio = document.getElementById('gone');
+            var playCountElement = document.getElementById('playCount');
+            var text = document.getElementById('go~ne');
             var count = 0;
-            audio.onended = function (){
+
+            audio.onended = function () {
                 count++;
                 playCountElement.textContent = '払った煩悩の数: ' + count;
-                if(count < 108){
+                if (count < 108) {
                     audio.play();
                 }
             };
+            text.addEventListener('click', function () {
+                count++;
+                playCountElement.textContent = '払った煩悩の数: ' + count;
+                var buttonAudio = new Audio('sound.mp3');
+                buttonAudio.play();
+            });
         </script>
     </body>
 </html>
