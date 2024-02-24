@@ -27,22 +27,34 @@
             >
         </p>
         <p id="playCount"></p>
+        <p id="clear"></p>
         <script>
             var audio = document.getElementById('gone');
             var playCountElement = document.getElementById('playCount');
+            var clearElement = document.getElementById('clear');
             var text = document.getElementById('go~ne');
             var count = 0;
 
+            function bonnoCheck() {
+                if (count < 108) {
+                    playCountElement.textContent = '払った煩悩の数: ' + count;
+                } else {
+                    playCountElement.textContent = '払った煩悩の数: ' + count;
+                    clearElement.textContent =
+                        '煩悩が無事410を返すようになりました';
+                }
+            }
+
             audio.onended = function () {
                 count++;
-                playCountElement.textContent = '払った煩悩の数: ' + count;
+                bonnoCheck();
                 if (count < 108) {
                     audio.play();
                 }
             };
             text.addEventListener('click', function () {
                 count++;
-                playCountElement.textContent = '払った煩悩の数: ' + count;
+                bonnoCheck();
                 var buttonAudio = new Audio('sound.mp3');
                 buttonAudio.play();
             });
