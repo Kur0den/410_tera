@@ -9,6 +9,10 @@
         {
             "source": "/sound.mp3",
             "destination": "/sound.mp3"
+        },
+        {
+            "source": "/favicon.ico",
+            "destination": "/favicon.ico"
         }
     ],
     "redirects": [
