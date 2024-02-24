@@ -8,13 +8,16 @@
             * {
                 text-align: center;
             }
+            #button {
+                border-radius: 20px;
+            }
         </style>
     </head>
     <body>
         <h2>410 Gone</h2>
         <hr />
-        <p>ご～ん...</p>
-        <audio controls autoplay loop>
+        <p id="go~ne">ご～ん...</p>
+        <audio controls autoplay id="gone">
             <source src="sound.mp3" type="audio/mpeg" />
         </audio>
         <p>
@@ -23,5 +26,38 @@
                 >Otologic</a
             >
         </p>
+        <p id="playCount"></p>
+        <p id="clear"></p>
+        <script>
+            var audio = document.getElementById('gone');
+            var playCountElement = document.getElementById('playCount');
+            var clearElement = document.getElementById('clear');
+            var text = document.getElementById('go~ne');
+            var count = 0;
+
+            function bonnoCheck() {
+                if (count < 108) {
+                    playCountElement.textContent = '払った煩悩の数: ' + count;
+                } else {
+                    playCountElement.textContent = '払った煩悩の数: ' + count;
+                    clearElement.textContent =
+                        '煩悩が無事410を返すようになりました';
+                }
+            }
+
+            audio.onended = function () {
+                count++;
+                bonnoCheck();
+                if (count < 108) {
+                    audio.play();
+                }
+            };
+            text.addEventListener('click', function () {
+                count++;
+                bonnoCheck();
+                var buttonAudio = new Audio('sound.mp3');
+                buttonAudio.play();
+            });
+        </script>
     </body>
 </html>
