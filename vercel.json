@@ -5,11 +5,10 @@
         { "src": "*.html", "use": "@vercel/static" },
         { "src": "./sound.mp3", "use": "@vercel/static" }
     ],
-    "redirects": [
+    "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/index.html",
-            "statusCode": 410
+            "source": "/index.html",
+            "status": 410
         }
     ]
 }
